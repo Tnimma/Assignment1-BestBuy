@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Laptop Details</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+ <script src="script.js"></script>
+<style>
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #879EE4;
+}
+table tr:nth-child(even) {
+  background-color: #CBD6F7;
+}
+</style>
+</head>
+<body>
+<h2>My Laptop Configuration Details </h2>
+<div ng-app="mainApp" ng-controller="laptopController">
+<table class="table-layout">
+
+<tr><td>Brand:</td><td><input type="text" ng-model="laptop.brand"></td></tr>
+<tr><td>Model:</td><td><input type="text" ng-model="laptop.model"></td></tr>
+<tr><td>Price:</td><td><input type="text" ng-model="laptop.price"></td></tr>
+
+<tr><td>Specifications:</td><td>
+<table>
+   <tr>
+      <th>Feature</th>
+      <th>Value</th>
+   </tr>
+   <tr ng-repeat="specification in laptop.specifications">
+      <td>{{ specification.feature }}</td>
+      <td>{{ specification.value }}</td>
+   </tr>
+</table>
+</td></tr>
+</table>
+</div>
+<script src="script.js">
+
+</script>
+</body>
+</html>
